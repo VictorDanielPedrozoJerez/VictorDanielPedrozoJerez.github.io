@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CampusGameSoft</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">  </head>
+    <link rel="stylesheet" type="text/css" href="StylesExamen.css">
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light" style="background: linear-gradient(to bottom right,#95009a,#ff2bff);">
+      
+      <div class="container-fluid">
+        <a class="navbar-brand" style="font-style: oblique" href="#"><p style="color: aliceblue;">CampusGameSoft</p></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <center>
+            
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#inicio" onclick="ClickInicio()"><hr><p style="color: aliceblue;">Inicio</p></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#clientes" onclick="ClickUsuarios()">
+                <i class="bi bi-wrench-adjustable-circle-fill"><p style="color: aliceblue;">Gestion de clientes</p></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#juegos" onclick="ClickJuegos()"> 
+              <i class="bi bi-hammer"><p style="color: aliceblue;">Gestion de video juegos</p></i>
+             </a> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#compras" onclick="ClickCompras()">
+              <i class="bi bi-lightning-charge-fill"><p style="color: aliceblue;">Compra de video juegos</p></i>
+             </a> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#fidelizacion" onclick="ClickFidelizacion()">
+              <i class="bi bi-lightning-charge-fill"><p style="color: aliceblue;">Sistema de fidelizacion</p></i>
+             </a> 
+            </li>
+          </ul>
+        
+        </center>
+          <span class="navbar-text" style="font-style: oblique">
+            <hr><p style="color: aliceblue;">CampusGameSoft diversion sin limites</p>
+          </span>
+        </div>
+      </div>
+    </nav>
+  
+    
+
+
+    <br>
+    <div class="margen-personalizado">
+
+      <div id="ModuloInicio">
+        <p class="pInicio" id="inicio"><center><span style='font-size:150px;'>&#128126;</span></center></p>
+        <center><div class="inicio"><p>CampusGameSoft</p></div></center>
+        <center><p style="font-size: 20px;">Conoce nuestros servicios en la barra de navegacion y disfruta de titulos increibles.</p></center>
+        <br>
+      </div> 
+
+
+
+      <div id="ModuloUsuarios" class="hidden"> 
+        <center>
+        <div class="title" id="clientes">  
+          <br><p>GESTION DE CLIENTES</p>
+        </div>
+        </center>
+
+
+        <br>
+        <form class="row g-3" id="formInsertar">
+          <div class="col-md-4">
+            <label for="ID" class="form-label">ID</label>
+            <input type="number" class="form-control" id="ID" >
+          </div>
+          <div class="col-md-4">
+            <label for="Nombres" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="Nombres">
+          </div>
+          <div class="col-md-4">
+            <label for="Apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="Apellidos">
+          </div>
+          <div class="col-md-4">
+            <label for="Nacionalidad" class="form-label">Nacionalidad</label>
+            <input type="text" class="form-control" id="Nacionalidad">
+          </div>
+          <div class="col-md-4">
+            <label for="Telefono" class="form-label">Telefono</label>
+            <input type="number" class="form-control" id="Telefono">
+          </div>
+          <div class="col-md-4">
+            <label for="Correo" class="form-label">Correo Electronico</label>
+            <input type="text" class="form-control" id="Correo">
+          </div>
+          <div class="col-md-6">
+            <label for="Fecha" class="form-label">Fecha de nacimiendo</label>
+            <input type="date" class="form-control" id="Fecha">
+          </div>
+
+          <div class="col-md-6">
+            <center><br>
+              <p id='bAgr'><button type="submit" class="btn btn-primary">Agregar</button></p>
+              <p id='bMod' class="hidden"><button type="submit" class="btn btn-primary">Modificar</button></p>
+            </center>
+          </div>
+        </form><br>
+
+
+        <div class="par">
+          <div class="par1">
+            <form id="formEliminar">
+
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" placeholder="ID a eliminar:" aria-label="Recipient's username" aria-describedby="button-addon2" id="Eliminar">
+                <button class="btn btn-outline-primary" type="button" id="button-addon2" onclick="eliminar()">Borrar</button>
+              </div>
+        
+            </form>
+          </div>
+          <div class="par2">
+            <form id="formConsultar">
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Text input with dropdown button" id="Consultar">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Buscar por:</button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" onclick="consultarUsuarioPorNombre()">Nombre</a></li>
+                  <li><a class="dropdown-item" onclick="consultarUsuarioPorId()">ID</a></li>
+                  <li><a class="dropdown-item" onclick="consultarUsuarioPorApellido()">Apellido</a></li>
+                </ul>
+              </div>
+              
+            </form>
+          </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="number" class="form-control" placeholder="ID a modificar:" aria-label="Recipient's username" aria-describedby="button-addon2" id="Modificar">
+        <button class="btn btn-outline-primary" type="button" id="button-addon2" onclick="modificar()">Modificar</button>
+      </div><hr>
+
+        
+        <div id="result" class="hidden">
+          <h4>Consulta:</h4><br>
+          <p>ID: <span id="id"></span></p>
+          <p>Nombre: <span id="nombre"></span></p>
+          <p>Apellidos: <span id="apellidos"></span></p>
+          <p>Telefono: <span id="telefono"></span></p>
+          <p>Correo Electronico: <span id="correo"></span></p>
+          <p>Fecha de nacimiento: <span id="fecha"></span></p>
+          <p>Nacionalidad: <span id="nacionalidad"></span></p>
+          <hr>
+        </div>
+
+        <div id="resultNo">
+          <center><h4>NO HAY CLIENTES REGISTADOS</h4></center>
+        </div>
+
+        <div id="resultUsu" class="hidden">
+          <center><h4>USUARIOS</h4></center>
+          <table class="table table-primary">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Nacionalidad</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="tablaUsuarios">
+            </tbody>
+          </table>
+        </div>
+        <br>
+      </div>
+
+
+      <div id="ModuloJuegos" class="hidden">
+        <center><br>
+          <div class="title" id="juegos">  
+            <br><p>MODULO DE JUEGOS</p>
+          </div>
+        </center><br><hr>
+
+        <br>
+        <form class="row g-3">
+    
+          <div class="col-md-4">
+            <label for="NombreJuego" class="form-label">Nombre el titulo</label>
+            <input type="text" class="form-control" id="NombreJuego">
+          </div>
+          <div class="col-md-4">
+            <label for="Tematica" class="form-label">Tematica</label>
+            <input type="text" class="form-control" id="Tematica">
+          </div>
+          <div class="col-md-4">
+            <label for="Costo" class="form-label">Valor licencia</label>
+            <input type="number" class="form-control" id="Costo">
+          </div>
+
+          <div class="col-md-6">
+            <label for="Puntos" class="form-label">Puntos para fidelizacion</label>
+            <input type="number" class="form-control" id="Puntos">
+          </div>
+
+          <div class="col-md-6">
+            <center><br><button type="button" class="btn btn-primary" onclick="AgregarJuego()">Agregar</button></center>
+          </div>
+        </form><br>
+
+
+
+
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" placeholder="ID a eliminar:" aria-label="Recipient's username" aria-describedby="button-addon2" id="EliminarJuego">
+          <button class="btn btn-outline-primary" type="button" id="button-addon2" onclick="eliminarJuego()">Borrar</button>
+        </div>
+        
+        <div id="resultNoJuegos">
+          <center><h4>NO HAY TITULOS REGISTADOS</h4></center>
+        </div>
+
+        <div id="resultJuegos" class="hidden">
+          <center><h4>TITULOS</h4></center>
+          <table class="table table-primary">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre del titulo</th>
+                <th scope="col">Tematica</th>
+                <th scope="col">Valor licencia</th>
+                <th scope="col">Puntos para fidelizacion</th>
+
+              </tr>
+            </thead>
+            <tbody id="tablaJuegos">
+            </tbody>
+          </table>
+        </div>
+        <br>
+      </div> 
+
+
+
+      <div id="ModuloCompras" class="hidden">
+        <center><br>
+          <div class="title" id="compras">  
+            <br><p>COMPRA DE TITULOS</p>
+        </div>
+        </center><br><hr>
+
+        <div id="resultNoJuegosCompra">
+          <center><h4>NO HAY TITULOS REGISTADOS</h4></center>
+        </div>
+
+        <div id="resultJuegosCompra" class="hidden">
+          <center><h4>TITULOS</h4></center>
+          <table class="table table-primary">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre del titulo</th>
+                <th scope="col">Tematica</th>
+                <th scope="col">Valor licencia</th>
+                <th scope="col">Puntos para fidelizacion</th>
+
+              </tr>
+            </thead>
+            <tbody id="tablaJuegosCompra">
+            </tbody>
+          </table>
+        </div>
+
+        <br><hr>
+
+        <div id="resultNoCompra">
+          <center><h4>NO HAY USUARIOS REGISTADOS</h4></center>
+        </div>
+
+        <div id="resultUsuCompra" class="hidden">
+          <center><h4>USUARIOS</h4></center>
+          <table class="table table-primary">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Nacionalidad</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="tablaUsuariosCompra">
+            </tbody>
+          </table>
+        </div>
+        <br>
+
+        <form class="row g-3">
+
+          <div class="col-md-4">
+            <label for="usuarioCompra" class="form-label">ID del usuario</label>
+            <input type="number" class="form-control" id="usuarioCompra">
+          </div>
+          <div class="col-md-4">
+            <label for="rutaCompra" class="form-label">ID de el juego</label>
+            <input type="number" class="form-control" id="juegoCompra">
+          </div>
+
+          <div class="col-md-4">
+            <center><br><button type="button" class="btn btn-primary" onclick="resumenCompra()">Comprar</button></center>
+          </div>
+        </form><br>
+
+        <div id="resultCompra" class="hidden">
+          <h4>RESUMEN:</h4><br>
+          <p>ID del usuario: <span id="idUsuarioC"></span></p>
+          <p>Nombre del usuario: <span id="nombreUsuarioC"></span></p>
+          <p>ID de el juego: <span id="idJuegoC"></span></p>
+          <p>Costo del juego: <span id="costoC"></span></p>
+          <p>IVA: <span id="IVA"></span></p>
+          <p>Impuesto especial: <span id="ImpuestoEsp"></span></p>
+          <p>Total: <span id="Total"></span></p>
+          <p>Puntos: <span id="puntosC"></span></p>
+          
+          <hr>
+        </div>
+
+      </div>
+
+      <div id="ModuloFidelizacion" class="hidden">
+        <center><br>
+          <div class="title" id="fidelizacion">  
+            <br><p>SISTEMA DE FIDELIZACION</p>
+        </div>
+        </center><br><hr>
+
+        <div id="resultNoPuntos">
+          <center><h4>NO HAY USUARIOS CON PUNTOS</h4></center>
+        </div>
+  
+        <div id="resultUsuPuntos" class="hidden">
+          <center><h4>USUARIOS CON PUNTOS</h4></center>
+          <table class="table table-primary">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Puntos</th>
+         
+              </tr>
+            </thead>
+            <tbody id="tablaUsuariosPuntos">
+            </tbody>
+          </table>
+        </div>
+        <br>
+
+      </div>
+
+
+
+
+    </div>
+
+    <script src="ScriptExamen.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+  </html>
